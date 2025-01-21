@@ -1,12 +1,14 @@
 import EventListItem from "./EventListItem"
-
-function EventList() {
+import { AppEvent } from "../../../app/types/event"
+type Props = {
+  events: AppEvent[]
+}
+function EventList({events}: Props) {
   return (
     <>
-      <EventListItem />
-      <EventListItem />
-      <EventListItem />
-      <EventListItem />
+    {events.map((event) => (
+      <EventListItem key={event.id} event={event}/>
+    ))}
     </>
   )
 }

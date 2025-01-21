@@ -1,9 +1,14 @@
 import { List, Image } from 'semantic-ui-react';
+import { Attendee } from "../../../app/types/event"
 
-function EventListAttendee() {
+type Props = {
+  attendee: Attendee
+}
+
+function EventListAttendee({attendee}: Props) {
   return (
     <List.Item>
-      <Image size='mini' circular src='/user.png'/>
+      <Image size='mini' circular src={attendee.photoURL}/>
     </List.Item>
 
   )
